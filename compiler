@@ -1,0 +1,83 @@
+Tokenizer
+
+    Token stream
+
+Parser
+
+    AST
+
+Semantic analysis
+
+    Extended AST
+
+Intermediate Code generation
+
+    IR
+
+Target Code Generator
+
+
+
+Simplest:
+---
+
+Token:
+- Function
+    - printf
+    - scanf
+- Variable / Word
+    - text
+- String
+    - text
+- Number
+    - value
+- Symbol
+    - =
+    - +
+    - -
+
+Parser:
+---
+
+G - Grammar
+p - printf
+s - scanf
+v - variable
+n - number
+t2 - symbol +/-
+
+Context free grammar:
+E -> v = E
+E -> p E
+E -> s
+E -> v
+E -> E t2 E
+E ->  EE
+
+Semantic analysis:
+---
+
+- Type checking? (v = E) can't be assigned anymore
+
+
+Intermediate code generation
+---
+
+- Needs to have ordering
+- Statement sequence
+
+- registers
+- numbers (types) 
+
+IR:
+- print reg
+- reg = scan
+- mov reg reg
+- add reg reg
+- subtract reg reg
+
+Target Code Generation
+---
+
+- Register allocation
+- Assembly code
